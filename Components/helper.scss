@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+@function pv($px) {
+  $result: 1;
+  $result: math.div($px, 1702) * 100;
+  @return #{$result}vw;
+}
+@mixin mQ($arg...) {
+  @if length($arg) == 1 {
+    @media screen and (max-width: #{nth($arg, 1)}px) {
+      @content;
+    }
+  }
+}
+
+// colors

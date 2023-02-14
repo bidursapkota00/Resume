@@ -5,12 +5,12 @@ import dynamic from 'next/dynamic';
 
 function Home() {
   const data = {
-    name: 'BIDUR SAPKOTA',
+    name: 'Ajay Poudel',
     fb: 'https://www.facebook.com/profile.php?id=100071062970707',
     in: 'https://www.linkedin.com/in/bidur-sapkota-3aa054203/',
     tw: '#',
     job: 'System Intern',
-    profile: '/profile1.jpg',
+    profile: '/profile.jpg',
     about:
       "Motivated and detail-oriented student of Bachelor's degree in Electronics, Communication and Information Engineering. Skilled in programming languages including Javascript, web development as well as Hardware design and coding. A quick learner and strong problem-solver with a passion for exploring new technologies and finding innovative solutions. Considered hardworking, punctual and driven.",
     phone: '9865711881',
@@ -54,8 +54,6 @@ function Home() {
       { name: 'Electronics', rating: 4 },
       { name: 'Web Development', rating: 4 },
       { name: 'App Development', rating: 3 },
-      { name: 'Hardware Coding', rating: 3 },
-      { name: 'Networking', rating: 3 },
     ],
     projects: [
       {
@@ -72,19 +70,25 @@ function Home() {
         title: 'UrbanSpace',
         expertise: 'Animations',
         description: ['Animation with GSAP'],
-        link: 'https://urbanspace.com.np/',
+        link: 'https://urbanspace.vercel.app/',
       },
       {
         title: 'Online Job App',
         expertise: 'Entire Frontend',
         description: ['Forms', 'API Integration'],
-        link: 'https://www.evereuser.co.uk/',
+        link: 'https://everestwebtest.vercel.app/',
       },
       {
         title: 'Dallotech',
         expertise: 'Company Website',
         description: ['FullStack Development'],
         link: 'https://dallotech.com/',
+      },
+      {
+        title: 'E-commerce',
+        expertise: 'College Minor Project',
+        description: ['FullStack Development', 'Khalti Payment Integration'],
+        link: 'https://college-project-gamma.vercel.app/',
       },
     ],
     trainings: [
@@ -95,31 +99,31 @@ function Home() {
         endDate: 'nov 2018',
       },
     ],
-    hobbies: ['Table Tennis', 'Walking'],
-    interests: ['Ethical Hacking', 'App Development', 'Networking', 'Iot'],
-    languages: ['Nepali', 'English', 'Korean', 'Hindi'],
+    hobbies: ['Guitar', 'Guitar', 'Guitar', 'Guitar'],
+    interests: ['Guitar', 'Guitar', 'Guitar', 'Guitar'],
+    languages: ['Guitar', 'Guitar', 'Guitar', 'Guitar'],
     certificates: [
       {
-        title: 'Hardware Model Exibition (First Position) - Yatra 4.0',
-        images: ['/certificate.png'],
-        startDate: '20 Jan 2023',
-        endDate: '21 Jan 2023',
+        title: 'Level of study',
+        images: ['/certificate.png', '/certificate.png'],
+        startDate: 'Jun 2021',
+        endDate: 'Jan 2022',
       },
     ],
     references: [
       {
-        name: 'Anup Pokhrel',
-        job: 'Co-Founder / QA Engineer',
-        company: 'DalloTech Pvt. Ltd.',
-        tel: '9847481555',
-        email: 'leo22.anup@gmail.com',
+        name: 'JOHNS MICHAEL',
+        job: 'Director',
+        company: 'Matrix media limited',
+        tel: '1438470',
+        email: 'email@gmail.com',
       },
       {
-        name: 'Sushan Maharjan',
-        job: 'Graphic Designer / Content Writer',
-        company: 'DalloTech Pvt. Ltd.',
-        tel: '9860110973',
-        email: 'sushanmaharjan21@gmail.com',
+        name: 'JOHNS MICHAEL',
+        job: 'Director',
+        company: 'Matrix media limited',
+        tel: '1438470',
+        email: 'email@gmail.com',
       },
     ],
   };
