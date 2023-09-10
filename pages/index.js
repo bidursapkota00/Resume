@@ -9,16 +9,16 @@ function Home() {
     fb: 'https://www.facebook.com/profile.php?id=100071062970707',
     in: 'https://www.linkedin.com/in/bidur-sapkota-3aa054203/',
     tw: '#',
-    job: 'System Intern',
+    job: '',
     profile: '/profile1.jpg',
     about:
-      "Motivated and detail-oriented student of Bachelor's degree in Electronics, Communication and Information Engineering. Skilled in programming languages including Javascript, web development as well as Hardware design and coding. A quick learner and strong problem-solver with a passion for exploring new technologies and finding innovative solutions. Considered hardworking, punctual and driven.",
+      "Motivated and detail-oriented graduate of Bachelor's degree in Electronics, Communication and Information Engineering. Skilled in Web development, Mobile app development as well as Hardware design and coding. A quick learner and strong problem-solver with a passion for exploring new technologies and finding innovative solutions. Considered hardworking, punctual and driven.",
     phone: '9865711881',
     email: 'bidursapkota00@gmail.com',
-    address: 'Shovahiti, Lalitpur',
+    address: 'Nakhipot, Lalitpur',
     experience: [
       {
-        jobTitle: 'React Developer',
+        jobTitle: 'Web Developer',
         organization: 'Dallotech pvt. ltd.',
         description: [
           'Worked on projects like Pdf generation, Webflow, Landing Pages, Online job Application',
@@ -44,10 +44,10 @@ function Home() {
         endDate: 'Aug 2018',
       },
       {
-        title: 'BEI',
+        title: 'BEI (77.38%)',
         organization: 'National College of Engineering',
         startDate: 'oct 2018',
-        endDate: 'now',
+        endDate: 'Jan 2023',
       },
     ],
     skills: [
@@ -88,16 +88,16 @@ function Home() {
       },
     ],
     trainings: [
-      {
-        title: 'Basic Python',
-        organization: 'Tech Axis',
-        startDate: 'oct 2018',
-        endDate: 'nov 2018',
-      },
+      // {
+      //   title: 'Basic Python',
+      //   organization: 'Tech Axis',
+      //   startDate: 'oct 2018',
+      //   endDate: 'nov 2018',
+      // },
     ],
     hobbies: ['Table Tennis', 'Walking'],
     interests: ['Ethical Hacking', 'App Development', 'Networking', 'Iot'],
-    languages: ['Nepali', 'English', 'Korean', 'Hindi'],
+    languages: ['Nepali', 'English', 'Hindi'],
     certificates: [
       {
         title: 'Hardware Model Exibition (First Position) - Yatra 4.0',

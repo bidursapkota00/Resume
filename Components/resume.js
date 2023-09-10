@@ -64,28 +64,30 @@ export default function Resume({ data }) {
                   </Link>
                 </View>
               </View>
-              <View style={styles.job_title}>
-                {job.map((j, i) => {
-                  if (i == index - 1) return;
-                  else if (i == index)
-                    return (
-                      <View style={styles.job_row}>
+              {job ? (
+                <View style={styles.job_title}>
+                  {job.map((j, i) => {
+                    if (i == index - 1) return;
+                    else if (i == index)
+                      return (
+                        <View style={styles.job_row}>
+                          <Text style={[styles.job_text, { paddingRight: 0 }]}>
+                            {job[index - 1]}
+                          </Text>
+                          <Text style={[styles.job_text, styles.job_bg]}>
+                            {j}
+                          </Text>
+                        </View>
+                      );
+                    else
+                      return (
                         <Text style={[styles.job_text, { paddingRight: 0 }]}>
-                          {job[index - 1]}
-                        </Text>
-                        <Text style={[styles.job_text, styles.job_bg]}>
                           {j}
                         </Text>
-                      </View>
-                    );
-                  else
-                    return (
-                      <Text style={[styles.job_text, { paddingRight: 0 }]}>
-                        {j}
-                      </Text>
-                    );
-                })}
-              </View>
+                      );
+                  })}
+                </View>
+              ) : null}
             </View>
             <View style={styles.name_cont}>
               {name.map((n, i) => {
@@ -322,35 +324,42 @@ export default function Resume({ data }) {
         {/* --------------------------------------------------------------------------- */}
         {/* --------------------------------------TRAININGS---------------------------- */}
         {/* --------------------------------------------------------------------------- */}
-        <View style={styles.edu}>
-          <View style={styles.edu_left}></View>
-          <View style={[styles.exp, styles.edu_edu]}>
-            <View style={styles.exp_iconc}>
-              <Image style={styles.exp_icon} source={'/head.png'}></Image>
-            </View>
-            <Text style={[styles.font, styles.exp_exp]}>COURSES/ TRANINGS</Text>
-            {data.trainings.map((e, i) => (
-              <View style={styles.exp_cont} wrap={false}>
-                <View style={styles.exp_titlec}>
-                  <Text style={[styles.font, styles.exp_title]}>{e.title}</Text>
-                  <View style={styles.exp_date}>
-                    <Image
-                      source={'/calender.png'}
-                      style={styles.exp_cal}
-                    ></Image>
-                    <Text style={[styles.font, styles.exp_datet]}>
-                      {e.startDate} - {e.endDate}
-                    </Text>
-                  </View>
-                  <Image style={styles.exp_tick} source={'/tick.png'}></Image>
-                </View>
-                <Text style={[styles.font, styles.exp_org]}>
-                  {e.organization}
-                </Text>
+        {data.trainings.length ? (
+          <View style={styles.edu}>
+            <View style={styles.edu_left}></View>
+            <View style={[styles.exp, styles.edu_edu]}>
+              <View style={styles.exp_iconc}>
+                <Image style={styles.exp_icon} source={'/head.png'}></Image>
               </View>
-            ))}
+              <Text style={[styles.font, styles.exp_exp]}>
+                COURSES/ TRANINGS
+              </Text>
+              {data.trainings.map((e, i) => (
+                <View style={styles.exp_cont} wrap={false}>
+                  <View style={styles.exp_titlec}>
+                    <Text style={[styles.font, styles.exp_title]}>
+                      {e.title}
+                    </Text>
+                    <View style={styles.exp_date}>
+                      <Image
+                        source={'/calender.png'}
+                        style={styles.exp_cal}
+                      ></Image>
+                      <Text style={[styles.font, styles.exp_datet]}>
+                        {e.startDate} - {e.endDate}
+                      </Text>
+                    </View>
+                    <Image style={styles.exp_tick} source={'/tick.png'}></Image>
+                  </View>
+                  <Text style={[styles.font, styles.exp_org]}>
+                    {e.organization}
+                  </Text>
+                </View>
+              ))}
+            </View>
           </View>
-        </View>
+        ) : null}
+        <Text> </Text>
         {/* --------------------------------------------------------------------------- */}
         {/* ------------------------------HOBBY/INTEREST/LANG-------------------------- */}
         {/* --------------------------------------------------------------------------- */}
@@ -417,6 +426,10 @@ export default function Resume({ data }) {
             </View>
           )}
         </View>
+        <Text> </Text>
+        <Text> </Text>
+        <Text> </Text>
+        <Text> </Text>
         {/* --------------------------------------------------------------------------- */}
         {/* ----------------------------------CERTIFICATES----------------------------- */}
         {/* --------------------------------------------------------------------------- */}
