@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Page,
   Text,
@@ -10,13 +10,13 @@ import {
   Svg,
   Circle,
   Path,
-} from '@react-pdf/renderer';
-import { styles } from './css';
-import { circle } from './common';
+} from "@react-pdf/renderer";
+import { styles } from "./css";
+import { circle } from "./common";
 
 export default function Resume({ data }) {
-  const name = data.name.split(' ');
-  let job = data.job.split(' ');
+  const name = data.name.split(" ");
+  let job = data.job.split(" ");
   let index = job.length - 1;
   job.splice(index, 0, job[index].charAt(0));
   job.splice(index + 1, 1, job[index + 1].substring(1));
@@ -31,11 +31,11 @@ export default function Resume({ data }) {
         <View style={styles.top}>
           <View style={styles.top_left}>
             <Image
-              source={'/ellipse1.png'}
+              source={"/ellipse1.png"}
               style={[styles.ellipse, styles.ellipse1]}
             ></Image>
             <Image
-              source={'/ellipse2.png'}
+              source={"/ellipse2.png"}
               style={[styles.ellipse, styles.ellipse2]}
             ></Image>
             <View style={styles.top_image}>
@@ -52,17 +52,26 @@ export default function Resume({ data }) {
                   </Link>
                 </View> */}
                 <View style={styles.link}>
-                  <Image style={styles.social_icon} source={'/fb.png'} />
+                  <Image style={styles.social_icon} source={"/fb.png"} />
                   <Link src={data.fb} style={[styles.social_text, styles.font]}>
                     Facebook
                   </Link>
                 </View>
                 <View style={styles.link}>
+                  <Image style={styles.social_icon} source={"/globe.png"} />
+                  <Link
+                    src={data.web}
+                    style={[styles.social_text, styles.font]}
+                  >
+                    Portfolio
+                  </Link>
+                </View>
+                {/* <View style={styles.link}>
                   <Image style={styles.social_icon} source={'/in.png'} />
                   <Link src={data.in} style={[styles.social_text, styles.font]}>
                     Linkedin
                   </Link>
-                </View>
+                </View> */}
               </View>
               {job ? (
                 <View style={styles.job_title}>
@@ -97,7 +106,7 @@ export default function Resume({ data }) {
                   );
                 else
                   return (
-                    <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: "row" }}>
                       <Text style={styles.top_name}> </Text>
                       <Text style={styles.top_name}>{n}</Text>
                     </View>
@@ -115,7 +124,7 @@ export default function Resume({ data }) {
         <View style={styles.contac} wrap={false}>
           <View style={styles.contac_cont}>
             <View style={styles.contac_icont}>
-              <Image style={styles.contac_icon} source={'/phone.png'}></Image>
+              <Image style={styles.contac_icon} source={"/phone.png"}></Image>
             </View>
             <View style={styles.contac_text}>
               <Text style={[styles.font, styles.contac_text1]}>Phone:</Text>
@@ -126,7 +135,7 @@ export default function Resume({ data }) {
           </View>
           <View style={styles.contac_cont}>
             <View style={styles.contac_icont}>
-              <Image style={styles.contac_icon} source={'/email.png'}></Image>
+              <Image style={styles.contac_icon} source={"/email.png"}></Image>
             </View>
             <View style={styles.contac_text}>
               <Text style={[styles.font, styles.contac_text1]}>Email:</Text>
@@ -137,7 +146,7 @@ export default function Resume({ data }) {
           </View>
           <View style={styles.contac_cont}>
             <View style={styles.contac_icont}>
-              <Image style={styles.contac_icon} source={'/address.png'}></Image>
+              <Image style={styles.contac_icon} source={"/address.png"}></Image>
             </View>
             <View style={styles.contac_text}>
               <Text style={[styles.font, styles.contac_text1]}>Address:</Text>
@@ -152,7 +161,7 @@ export default function Resume({ data }) {
         {/* --------------------------------------------------------------------------- */}
         <View style={styles.exp}>
           <View style={styles.exp_iconc}>
-            <Image style={styles.exp_icon} source={'/head.png'}></Image>
+            <Image style={styles.exp_icon} source={"/head.png"}></Image>
           </View>
           <Text style={[styles.font, styles.exp_exp]}>Experience</Text>
           {data.experience.map((e, i) => (
@@ -163,14 +172,14 @@ export default function Resume({ data }) {
                 </Text>
                 <View style={styles.exp_date}>
                   <Image
-                    source={'/calender.png'}
+                    source={"/calender.png"}
                     style={styles.exp_cal}
                   ></Image>
                   <Text style={[styles.font, styles.exp_datet]}>
                     {e.startDate} - {e.endDate}
                   </Text>
                 </View>
-                <Image style={styles.exp_tick} source={'/tick.png'}></Image>
+                <Image style={styles.exp_tick} source={"/tick.png"}></Image>
               </View>
               <Text style={[styles.font, styles.exp_org]}>
                 {e.organization}
@@ -184,6 +193,7 @@ export default function Resume({ data }) {
             </View>
           ))}
         </View>
+
         {/* --------------------------------------------------------------------------- */}
         {/* --------------------------------------EDUCATION---------------------------- */}
         {/* --------------------------------------------------------------------------- */}
@@ -191,7 +201,7 @@ export default function Resume({ data }) {
           <View style={styles.edu_left}></View>
           <View style={[styles.exp, styles.edu_edu]}>
             <View style={styles.exp_iconc}>
-              <Image style={styles.exp_icon} source={'/head.png'}></Image>
+              <Image style={styles.exp_icon} source={"/head.png"}></Image>
             </View>
             <Text style={[styles.font, styles.exp_exp]}>Education</Text>
             {data.education.map((e, i) => (
@@ -200,14 +210,14 @@ export default function Resume({ data }) {
                   <Text style={[styles.font, styles.exp_title]}>{e.title}</Text>
                   <View style={styles.exp_date}>
                     <Image
-                      source={'/calender.png'}
+                      source={"/calender.png"}
                       style={styles.exp_cal}
                     ></Image>
                     <Text style={[styles.font, styles.exp_datet]}>
                       {e.startDate} - {e.endDate}
                     </Text>
                   </View>
-                  <Image style={styles.exp_tick} source={'/tick.png'}></Image>
+                  <Image style={styles.exp_tick} source={"/tick.png"}></Image>
                 </View>
                 <Text style={[styles.font, styles.exp_org]}>
                   {e.organization}
@@ -219,14 +229,11 @@ export default function Resume({ data }) {
         {/* --------------------------------------------------------------------------- */}
         {/* -----------------------------------SKILLS---------------------------------- */}
         {/* --------------------------------------------------------------------------- */}
-        <Text> </Text>
-        <Text> </Text>
-        <Text> </Text>
         <View style={styles.skills}>
           <View style={styles.skill}>
             <View style={styles.skill_box}>
               <View style={styles.skill_iconc}>
-                <Image style={styles.exp_icon} source={'/head.png'}></Image>
+                <Image style={styles.exp_icon} source={"/head.png"}></Image>
               </View>
               <Text style={[styles.font, styles.skill_htext]}>SKILLS</Text>
             </View>
@@ -268,10 +275,10 @@ export default function Resume({ data }) {
                   <Text style={[styles.font, styles.skill_name]}>{s.name}</Text>
                   <View style={styles.stars}>
                     {[...new Array(parseInt(s.rating))].map(() => (
-                      <Image source={'/stary.png'} style={styles.star}></Image>
+                      <Image source={"/stary.png"} style={styles.star}></Image>
                     ))}
                     {[...new Array(5 - parseInt(s.rating))].map(() => (
-                      <Image source={'/starb.png'} style={styles.star}></Image>
+                      <Image source={"/starb.png"} style={styles.star}></Image>
                     ))}
                   </View>
                 </View>
@@ -283,10 +290,10 @@ export default function Resume({ data }) {
         {/* ------------------------------------PROJECTS------------------------------- */}
         {/* --------------------------------------------------------------------------- */}
         <View style={[styles.exp, { marginTop: 6 }]}>
-          <Image source={'/ell2.png'} style={[styles.ell, styles.ell2]}></Image>
-          <Image source={'/ell1.png'} style={[styles.ell, styles.ell1]}></Image>
+          <Image source={"/ell2.png"} style={[styles.ell, styles.ell2]}></Image>
+          <Image source={"/ell1.png"} style={[styles.ell, styles.ell1]}></Image>
           <View style={styles.exp_iconc}>
-            <Image style={styles.exp_icon} source={'/head.png'}></Image>
+            <Image style={styles.exp_icon} source={"/head.png"}></Image>
           </View>
           <Text style={[styles.font, styles.exp_exp]}>Projects</Text>
           {data.projects.map((e, i) => (
@@ -297,14 +304,14 @@ export default function Resume({ data }) {
                   style={[
                     styles.font,
                     styles.exp_title,
-                    { textDecoration: 'none' },
+                    { textDecoration: "none" },
                   ]}
                 >
                   {e.title}
                 </Link>
                 <Image
                   style={[styles.exp_tick, { top: 1.5 }]}
-                  source={'/tick.png'}
+                  source={"/tick.png"}
                 ></Image>
               </View>
               <Text style={[styles.font, styles.exp_org]}>{e.expertise}</Text>
@@ -329,7 +336,7 @@ export default function Resume({ data }) {
             <View style={styles.edu_left}></View>
             <View style={[styles.exp, styles.edu_edu]}>
               <View style={styles.exp_iconc}>
-                <Image style={styles.exp_icon} source={'/head.png'}></Image>
+                <Image style={styles.exp_icon} source={"/head.png"}></Image>
               </View>
               <Text style={[styles.font, styles.exp_exp]}>
                 COURSES/ TRANINGS
@@ -340,16 +347,16 @@ export default function Resume({ data }) {
                     <Text style={[styles.font, styles.exp_title]}>
                       {e.title}
                     </Text>
-                    <View style={styles.exp_date}>
+                    {/* <View style={styles.exp_date}>
                       <Image
-                        source={'/calender.png'}
+                        source={"/calender.png"}
                         style={styles.exp_cal}
                       ></Image>
                       <Text style={[styles.font, styles.exp_datet]}>
                         {e.startDate} - {e.endDate}
                       </Text>
-                    </View>
-                    <Image style={styles.exp_tick} source={'/tick.png'}></Image>
+                    </View> */}
+                    <Image style={styles.exp_tick} source={"/tick.png"}></Image>
                   </View>
                   <Text style={[styles.font, styles.exp_org]}>
                     {e.organization}
@@ -359,7 +366,6 @@ export default function Resume({ data }) {
             </View>
           </View>
         ) : null}
-        <Text> </Text>
         {/* --------------------------------------------------------------------------- */}
         {/* ------------------------------HOBBY/INTEREST/LANG-------------------------- */}
         {/* --------------------------------------------------------------------------- */}
@@ -376,7 +382,7 @@ export default function Resume({ data }) {
               <View style={styles.hobby_hobbytc}>
                 <View style={styles.skill_box}>
                   <View style={styles.skill_iconc}>
-                    <Image style={styles.exp_icon} source={'/head.png'}></Image>
+                    <Image style={styles.exp_icon} source={"/head.png"}></Image>
                   </View>
                   <Text style={[styles.font, styles.skill_htext]}>HOBBIES</Text>
                 </View>
@@ -395,7 +401,7 @@ export default function Resume({ data }) {
               <View style={styles.hobby_hobbytc}>
                 <View style={styles.skill_box}>
                   <View style={styles.skill_iconc}>
-                    <Image style={styles.exp_icon} source={'/head.png'}></Image>
+                    <Image style={styles.exp_icon} source={"/head.png"}></Image>
                   </View>
                   <Text style={[styles.font, styles.skill_htext]}>
                     INTERESTS
@@ -416,7 +422,7 @@ export default function Resume({ data }) {
               <View style={styles.hobby_hobbytc}>
                 <View style={styles.skill_box}>
                   <View style={styles.skill_iconc}>
-                    <Image style={styles.exp_icon} source={'/head.png'}></Image>
+                    <Image style={styles.exp_icon} source={"/head.png"}></Image>
                   </View>
                   <Text style={[styles.font, styles.skill_htext]}>
                     LANGUAGES
@@ -426,16 +432,12 @@ export default function Resume({ data }) {
             </View>
           )}
         </View>
-        <Text> </Text>
-        <Text> </Text>
-        <Text> </Text>
-        <Text> </Text>
         {/* --------------------------------------------------------------------------- */}
         {/* ----------------------------------CERTIFICATES----------------------------- */}
         {/* --------------------------------------------------------------------------- */}
         <View style={styles.exp}>
           <View style={styles.exp_iconc}>
-            <Image style={styles.exp_icon} source={'/head.png'}></Image>
+            <Image style={styles.exp_icon} source={"/head.png"}></Image>
           </View>
           <Text style={[styles.font, styles.exp_exp]}>Certification</Text>
           {data.certificates.map((e, i) => (
@@ -444,20 +446,20 @@ export default function Resume({ data }) {
                 <Text style={[styles.font, styles.exp_title]}>{e.title}</Text>
                 <View style={styles.exp_date}>
                   <Image
-                    source={'/calender.png'}
+                    source={"/calender.png"}
                     style={styles.exp_cal}
                   ></Image>
                   <Text style={[styles.font, styles.exp_datet]}>
                     {e.startDate} - {e.endDate}
                   </Text>
                 </View>
-                <Image style={styles.exp_tick} source={'/tick.png'}></Image>
+                <Image style={styles.exp_tick} source={"/tick.png"}></Image>
               </View>
-              <View style={styles.certificate_cont}>
+              {/* <View style={styles.certificate_cont}>
                 {e.images.map((img) => (
                   <Image src={img} style={styles.certificate}></Image>
                 ))}
-              </View>
+              </View> */}
             </View>
           ))}
         </View>
@@ -466,13 +468,13 @@ export default function Resume({ data }) {
         {/* --------------------------------------------------------------------------- */}
         <View style={styles.ref}>
           <View style={styles.ref_left}>
-            <Image style={[styles.el, styles.el1]} src={'/el1.png'}></Image>
-            <Image style={[styles.el, styles.el2]} src={'/el2.png'}></Image>
+            <Image style={[styles.el, styles.el1]} src={"/el1.png"}></Image>
+            <Image style={[styles.el, styles.el2]} src={"/el2.png"}></Image>
           </View>
           <View style={styles.ref_right}>
             <View style={styles.skill_box}>
               <View style={styles.skill_iconc}>
-                <Image style={styles.exp_icon} source={'/head.png'}></Image>
+                <Image style={styles.exp_icon} source={"/head.png"}></Image>
               </View>
               <Text style={[styles.font, styles.skill_htext]}>REFERENCES</Text>
             </View>
@@ -486,7 +488,7 @@ export default function Resume({ data }) {
                 ]}
                 wrap={false}
               >
-                <View style={[styles.ref_row, { margin: '0 auto' }]}>
+                <View style={[styles.ref_row, { margin: "0 auto" }]}>
                   <Text
                     style={[styles.font, styles.ref_text1]}
                   >{`${r.name}, `}</Text>
@@ -497,10 +499,10 @@ export default function Resume({ data }) {
                     style={[styles.font, styles.ref_text2]}
                   >{`${r.company}`}</Text>
                 </View>
-                <View style={[styles.ref_row, { margin: '0 auto' }]}>
+                <View style={[styles.ref_row, { margin: "0 auto" }]}>
                   <View style={[styles.ref_row, { marginRight: 40 }]}>
                     <Text style={[styles.font, styles.ref_text3]}>
-                      Contact:{' '}
+                      Contact:{" "}
                     </Text>
                     <Text style={[styles.font, styles.ref_text4]}>{r.tel}</Text>
                   </View>
