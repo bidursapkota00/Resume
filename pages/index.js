@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 function Home() {
   const data = {
     name: "BIDUR SAPKOTA",
-    fb: "https://www.facebook.com/profile.php?id=100071062970707",
+    fb: "https://www.facebook.com/bdur.sapkota",
     in: "https://www.linkedin.com/in/bidur-sapkota-3aa054203/",
     web: "https://www.bidursapkota.com.np/",
     tw: "#",
@@ -77,20 +77,11 @@ function Home() {
         title: "Smart Water Meter",
         expertise: "College Major Project",
         description: [
-          "Circuit design and implementation for measuring household drinking water consumpiton",
+          "Circuit design and implementation for measuring household drinking water consumption",
           "Apk Development with integrated khalti payment gateway for clients",
           "Web Development with dashboard for water service providers",
         ],
         link: "#",
-      },
-      {
-        title: "UrbanSpace",
-        expertise: "Animations",
-        description: [
-          "Developed a landing page for a Hotel",
-          "Animation with GSAP",
-        ],
-        link: "https://urbanspace.com.np/",
       },
       {
         title: "Online Job App",
@@ -109,6 +100,15 @@ function Home() {
           "Fully dynamic fullStack development of a company landing page",
         ],
         link: "https://dallotech.com/",
+      },
+      {
+        title: "UrbanSpace",
+        expertise: "Animations",
+        description: [
+          "Developed a landing page for a Hotel",
+          "Animation with GSAP",
+        ],
+        link: "https://urbanspace.com.np/",
       },
     ],
     trainings: [
